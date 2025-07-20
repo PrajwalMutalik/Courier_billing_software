@@ -1,0 +1,6 @@
+cat > .gitignore <<EOL
+node_modules/
+db/bills.db
+build/
+dist/
+EOL

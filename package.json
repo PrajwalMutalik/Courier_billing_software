@@ -1,0 +1,48 @@
+{
+  "name": "courier-bill-pro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+  "appId": "your.courierbillpro.id",
+  "productName": "Courier Bill Pro",
+  "files": [
+    "main.js",
+    "preload.js",
+    "renderer.js",
+    "index.html",
+    "style.css",
+    "print.css",
+    "assets/**/*",
+    "db/**/*",
+    "node_modules/**/*",
+    "package.json"
+  ],
+  "extraResources": [
+    "db/schema.sql"
+  ],
+  "win": {
+    "icon": "assets/icon.ico",
+    "target": "nsis"
+  }
+},
+
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "electron": "^37.2.3",
+    "electron-builder": "^26.0.12",
+    "electron-packager": "^17.1.2",
+    "electron-rebuild": "^3.2.9"
+  }
+}

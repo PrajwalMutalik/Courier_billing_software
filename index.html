@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Courier Bill Pro</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="company-header">
+        <img
+          src="assets/logo.png"
+          alt="Professional Couriers Logo"
+          class="company-logo"
+          width="200"
+          height="150"
+        />
+        <div class="company-details">
+          <div class="company-name">THE PROFESSIONAL COURIERS</div>
+          <div class="company-tagline">
+            Domestic & International • Courier, Cargo & Premium Services
+          </div>
+          <div class="company-info">
+            Near Head Post Office<br />
+            Ganesh Complex M.G Road Ranebennur<br />
+            Phone: 267224
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Bill Entry -->
+      <section class="card">
+        <h2>New Bill Entry</h2>
+        <form id="entry-form" autocomplete="off">
+          <div class="form-row">
+            <div class="form-col">
+              <label for="bill-date">Date (For Row)</label>
+              <input type="date" id="bill-date" required />
+            </div>
+            <div class="form-col">
+              <label for="bill-save-date">Bill Save Date</label>
+              <input type="date" id="bill-save-date" required />
+            </div>
+            <div class="form-col">
+              <label for="con-no">Con. No</label>
+              <input
+                type="text"
+                id="con-no"
+                placeholder="Enter Consignment No"
+                required
+              />
+            </div>
+            <div class="form-col">
+              <label for="consignee">Consignee Name</label>
+              <div class="select-row">
+                <select id="consignee" required></select>
+                <button id="add-consignee" type="button">Add More</button>
+              </div>
+              <div
+                id="consignee-add-row"
+                style="display: none; margin-top: 8px"
+              >
+                <input
+                  id="consignee-new-value"
+                  type="text"
+                  placeholder="New Consignee Name"
+                />
+                <button id="consignee-save" type="button">Save</button>
+                <button id="consignee-cancel" type="button">Cancel</button>
+              </div>
+            </div>
+            <div class="form-col">
+              <label for="destination">Destination</label>
+              <div class="select-row">
+                <select id="destination" required></select>
+                <button id="add-destination" type="button">Add More</button>
+              </div>
+              <div
+                id="destination-add-row"
+                style="display: none; margin-top: 8px"
+              >
+                <input
+                  id="destination-new-value"
+                  type="text"
+                  placeholder="New Destination"
+                />
+                <button id="destination-save" type="button">Save</button>
+                <button id="destination-cancel" type="button">Cancel</button>
+              </div>
+            </div>
+          </div>
+          <div class="form-row form-row-weight">
+            <div class="form-col weight-group">
+              <label for="weight-value">Weight</label>
+              <div class="weight-inputs">
+                <input
+                  type="number"
+                  id="weight-value"
+                  name="weight-value"
+                  min="0"
+                  step="any"
+                  placeholder="Enter value"
+                />
+                <label class="weight-radio"
+                  ><input type="radio" name="weight-metric" value="g" />
+                  g</label
+                >
+                <label class="weight-radio"
+                  ><input type="radio" name="weight-metric" value="kg" />
+                  kg</label
+                >
+                <label class="weight-radio"
+                  ><input type="radio" name="weight-metric" value="M" />
+                  M</label
+                >
+              </div>
+            </div>
+            <div class="form-col amount-group">
+              <label for="amount">Amount</label>
+              <input type="number" id="amount" required />
+            </div>
+            <div class="form-col addrow-btncol">
+              <label>&nbsp;</label>
+              <button id="add-row" type="button" style="width: 100%">
+                Add Row
+              </button>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <!-- Consignments Table -->
+      <section class="card">
+        <h2>Consignments</h2>
+        <table id="entry-table">
+          <thead>
+            <tr>
+              <th>Sl No</th>
+              <th>Date</th>
+              <th>Con. No</th>
+              <th>Name</th>
+              <th>Weight</th>
+              <th>Destination</th>
+              <th>Amount</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <!-- Totals -->
+      <section class="card totals">
+        <label>Total: ₹ <span id="total">0.00</span></label>
+        <label for="gst-percent"
+          >Fuel Charges %:
+          <input type="number" id="gst-percent" value="18" min="0" max="100" />
+        </label>
+        <label>Fuel Charges: ₹ <span id="gst-amount">0.00</span></label>
+        <label>Grand Total: ₹ <span id="grand-total">0.00</span></label>
+        <div class="button-group">
+          <button id="generate-bill" type="button">Generate Bill</button>
+          <button id="print-bill" type="button">Print</button>
+          <button id="new-bill-btn" type="button">New Bill</button>
+        </div>
+      </section>
+
+      <!-- View Past Bills -->
+      <section class="card">
+        <h2>View Past Bills</h2>
+        <form class="view-form-row">
+          <label for="view-date">Select Date</label>
+          <input type="date" id="view-date" />
+          <button id="view-bill" type="button">View</button>
+        </form>
+        <div id="past-bills-list"></div>
+      </section>
+    </main>
+
+    <!-- Hidden Print Section -->
+    <div id="print-section" style="display: none">
+      <!-- (unchanged print template) -->
+    </div>
+
+    <footer class="app-footer">
+      &copy; <span id="copyright-year"></span> Fida K S
+    </footer>
+
+    <script>
+      document.getElementById("copyright-year").textContent =
+        new Date().getFullYear();
+      // Set default Bill Save Date to today
+      document.getElementById("bill-save-date").value = new Date()
+        .toISOString()
+        .split("T")[0];
+    </script>
+    <script src="renderer.js"></script>
+  </body>
+</html>
