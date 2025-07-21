@@ -144,7 +144,7 @@ This software is a private, client-specific project and is not open for redistri
 Want a similar app for your business?
 Feel free to reach out!
 
-Developer: Prajwal Mutalik , Fida Khanum
+Developer: Prajwal Mutalik , Fida Khanum <br>
 📧 Email: prajwalmutalik8@gmail.com, ksfida2004@gmail.com
 
 
