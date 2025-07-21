@@ -9,7 +9,7 @@ function initializeDatabase() {
   // Ensure db folder exists
   if (!fs.existsSync(dbFolder)) {
     fs.mkdirSync(dbFolder, { recursive: true });
-  }
+  } 
 
   const isNew = !fs.existsSync(dbPath);
   db = new sqlite3.Database(dbPath);
