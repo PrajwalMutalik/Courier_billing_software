@@ -137,7 +137,10 @@ This project was developed on request for a specific Professional Couriers outle
 
 ## 🔐 License
 
-This software is a private, client-specific project and is not open for redistribution or commercial reuse without permission.
+This software is a private, client-specific project developed for internal use by Professional Courier branch.
+All rights are reserved. Redistribution, modification, or commercial use is **not permitted** without prior written permission.
+
+For licensing inquiries, contact: prajwalmutalik@gmail.com
 
 ## 📬 Contact
 
